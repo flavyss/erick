@@ -1,0 +1,109 @@
+:root{
+    --bl: #000;
+    --wt: #fff;
+    --cc: #ccc;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body{
+    height: 100%;
+}
+
+.menuMobile{
+    display:none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+header{
+    padding: 10px 0;
+    background-color: var(--bl);
+    color: var(--wt);
+}
+
+header > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container .menuDesktop ul{
+    display: flex;
+    list-style: none;
+}
+
+header .container .menuDesktop ul li{
+    margin:  0 10px;
+    font-size: 18px;
+}
+
+header .container .menuDesktop ul li a{
+    text-decoration: none;
+    color: var(--wt);
+}
+
+header .container .menuDesktop ul li a:hover,
+header .container .menuDesktop ul li .ativo{
+    color: var(--cc);
+}
+
+@media screen and (max-width: 500px){
+    .menuDesktop{
+        display: none;
+    }
+
+    .menuMobile{
+        display: block;
+    }
+
+    .menuMobile img{
+        width: 40px;
+        cursor: pointer;
+    }
+
+    .menuMobile ul{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100vh;
+        background-color: black;
+        z-index: 99;
+        overflow:hidden;
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+    .menuMobile ul img{
+        width: 40px;
+        margin: 40px 0;
+    }
+
+    .menuMobile li{
+        font-size: 22px;
+        margin: 10px 0;
+    }
+    .menuMobile ul li a{
+        text-decoration: none;
+        color:#ccc;
+    }
+}
+
+.ativo{
+    transition: 1s !important;
+    width: 100% !important;
+}
